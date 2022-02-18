@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from telegram import Update,Bot
 from telegram.ext import Updater,MessageHandler,Filters
 from telegram.utils.request import Request
-import os
+import os,json
 #get api key from env
 load_dotenv()
 pwd=os.getenv("API_KEY")
@@ -15,6 +15,7 @@ def mesaage_handler(update,context):
         update.message.reply_text(f'hello , how can i help you')
     else:
         update.message.reply_text(f'you sent the following: {update.message.text}')
+
 
 
 def main():
